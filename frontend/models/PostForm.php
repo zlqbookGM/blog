@@ -23,7 +23,8 @@ class PostForm extends Model
      * */
     const SCENARIOS_CREATE = 'create';
     const SCENARIOS_UPDATE = 'update';
-    
+    const EVENT_AFTER_CREATE = "eventAfterCreate";
+    const EVENT_AFTER_UPDATE = "eventAfterUpdate";
     /**
      * 场景设置
      * {@inheritDoc}
@@ -79,7 +80,8 @@ class PostForm extends Model
                 throw new \Exception('保存失败！');
                 $this->id = $model->id;
                //调用事件
-               $this->_eventAfterCreate();
+               $data =array_merge($this->getAttributes(),$model->getAttributes());
+               $this->_eventAfterCreate($data);
                
             $transaction->commit();
             return true;
@@ -97,9 +99,9 @@ class PostForm extends Model
         
     }
     
-    public function _eventAfterCreate()
+    public function _eventAfterCreate($data)
     {
-        
+        $this->on(self::EVENT_AFTER_CREATE,[$this,'_eventAddtag',$data]);
     }
     
     
