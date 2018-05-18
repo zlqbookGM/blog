@@ -3,7 +3,7 @@
 namespace common\models;
 
 use Yii;
-use Yii\db\ActiveRecord;
+use yii\db\ActiveRecord;
 /**
  * This is the model class for table "posts".
  *
@@ -19,7 +19,7 @@ use Yii\db\ActiveRecord;
  * @property int $created_at 创建时间
  * @property int $updated_at 更新时间
  */
-class PostsModel extends ActiveRecord
+class PostModel extends ActiveRecord
 {
     /**
      * {@inheritdoc}

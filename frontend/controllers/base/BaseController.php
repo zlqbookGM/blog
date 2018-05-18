@@ -1,6 +1,6 @@
 <?php
 namespace frontend\controllers\base;
-/*»ù´¡¿ØÖÆÆ÷*/
+
 use yii\web\Controller;
 
 class Basecontroller extends  Controller

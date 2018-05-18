@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 /*文章控制器*/
+use Yii;
 use frontend\controllers\base\Basecontroller;
 use frontend\models\PostForm;
 use common\models\CatModel;
@@ -11,7 +12,7 @@ class PostController extends Basecontroller
     {
         return [
             'upload'=>[
-                'class' => 'common\widgets\file_upload\UploadAction',
+                'class' => 'common\widgets\file_upload\UploadAction',    
                 'config' => [
                     'imagePathFormat' => "/image/{yyyy}{mm}{dd}/{time}{rand:6}",
                 ]
@@ -38,6 +39,13 @@ class PostController extends Basecontroller
     public  function  actionCreate()
     {
         $model =new PostForm();
+        $model->setScenario(PostForm::SCENARIOS_CREATE);
+        if(!$model->create()){
+            Yii::$app->session->setFlash('warning',$model->_lastError);
+        }else 
+            {
+             return $this->redirect(['post/view','id'=>$model->id]);   
+            }
         $cat = CatModel::getAllCats();
         return $this->render('create',['model'=>$model,'cat'=>$cat]);
     }
