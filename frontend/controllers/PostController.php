@@ -39,6 +39,7 @@ class PostController extends Basecontroller
     public  function  actionCreate()
     {
         $model =new PostForm();
+
         $model->setScenario(PostForm::SCENARIOS_CREATE);
         if(!$model->create()){
             Yii::$app->session->setFlash('warning',$model->_lastError);
@@ -48,5 +49,8 @@ class PostController extends Basecontroller
             }
         $cat = CatModel::getAllCats();
         return $this->render('create',['model'=>$model,'cat'=>$cat]);
+    }
+
+    public function actionView($id){
     }
 }

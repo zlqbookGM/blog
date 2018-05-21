@@ -298,7 +298,7 @@ var CodeMirror = (function() {
 
         function onMouseDown(e) {
             setShift(e.shiftKey);
-            // Check whether this is a click in a widget
+            // Check whether this is a click in a widgets
             for (var n = e_target(e); n != wrapper; n = n.parentNode)
                 if (n.parentNode == code && n != mover) return;
 

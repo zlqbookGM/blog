@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][]=$this->title;
 		</div>
 		<div class="pannel-body">
 			<?php $form = ActiveForm::begin()?>
+            <?=$form->field($model, 'id')->textInput(['maxlength'=>true])?>
 			<?=$form->field($model, 'title')->textInput(['maxlength'=>true])?>
 			<?=$form->field($model, 'cat_id')->dropDownList($cat)?>
 			<?= $form->field($model, 'label_img')->widget('common\widgets\file_upload\FileUpload',[

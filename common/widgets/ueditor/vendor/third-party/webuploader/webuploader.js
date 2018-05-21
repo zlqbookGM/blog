@@ -858,7 +858,7 @@
                 return true;
             },
     
-            // widgets/widget.js将补充此方法的详细文档。
+            // widgets/widgets.js将补充此方法的详细文档。
             request: Base.noop
         });
     
@@ -1351,7 +1351,7 @@
         'base',
         'uploader',
         'lib/dnd',
-        'widgets/widget'
+        'widgets/widgets'
     ], function( Base, Uploader, Dnd ) {
         var $ = Base.$;
     
@@ -1452,7 +1452,7 @@
         'base',
         'uploader',
         'lib/filepaste',
-        'widgets/widget'
+        'widgets/widgets'
     ], function( Base, Uploader, FilePaste ) {
         var $ = Base.$;
     
@@ -1710,7 +1710,7 @@
         'base',
         'uploader',
         'lib/filepicker',
-        'widgets/widget'
+        'widgets/widgets'
     ], function( Base, Uploader, FilePicker ) {
         var $ = Base.$;
     
@@ -1933,7 +1933,7 @@
         'base',
         'uploader',
         'lib/image',
-        'widgets/widget'
+        'widgets/widgets'
     ], function( Base, Uploader, Image ) {
     
         var $ = Base.$,
@@ -2610,7 +2610,7 @@
         'file',
         'lib/file',
         'runtime/client',
-        'widgets/widget'
+        'widgets/widgets'
     ], function( Base, Uploader, Queue, WUFile, File, RuntimeClient ) {
     
         var $ = Base.$,
@@ -2895,7 +2895,7 @@
     define('widgets/runtime',[
         'uploader',
         'runtime/runtime',
-        'widgets/widget'
+        'widgets/widgets'
     ], function( Uploader, Runtime ) {
     
         Uploader.support = function() {
@@ -3076,7 +3076,7 @@
         'uploader',
         'file',
         'lib/transport',
-        'widgets/widget'
+        'widgets/widgets'
     ], function( Base, Uploader, WUFile, Transport ) {
     
         var $ = Base.$,
@@ -3735,7 +3735,7 @@
         'base',
         'uploader',
         'file',
-        'widgets/widget'
+        'widgets/widgets'
     ], function( Base, Uploader, WUFile ) {
     
         var $ = Base.$,
